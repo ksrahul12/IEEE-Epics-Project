@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:umanoPanelHeight="40dp"
+    app:umanoShadowHeight="30dp"
+    android:gravity="bottom"
+    tools:context="com.qr.epics.epicsr.walletPage">
+
+    //BASE LAYOUT
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="278dp"
+            android:layout_height="284dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:max="1000"
+            android:progress="385"
+            android:progressDrawable="@drawable/circularpb" />
+
+        <TextView
+            android:id="@+id/ActualBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:text="₹680"
+            android:textColor="#000000"
+            android:shadowColor="#b1b1b1"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/FixedBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ActualBalance"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="/ ₹1000"
+            android:textColor="#6e6e6e"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addMoney"
+            android:layout_width="56dp"
+            android:padding="16dp"
+            android:layout_height="56dp"
+            android:elevation="8dp"
+            app:backgroundTint="@android:color/holo_blue_light"
+            android:layout_below="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_add" />
+
+        <TextView
+            android:id="@+id/infoAddMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/FixedBalance"
+            android:layout_below="@+id/addMoney"
+            android:textColor="#717171"
+            android:layout_marginTop="13dp"
+            android:text="Add Money" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/infoAddMoney"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@android:color/holo_blue_light" />
+
+        <Button
+            android:id="@+id/add50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quickAddInfo"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="27dp"
+            android:layout_toStartOf="@+id/add100"
+            android:background="@drawable/raised_button"
+            android:text="+ ₹50" />
+
+        <Button
+            android:id="@+id/add100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/add50"
+            android:background="@drawable/raised_button"
+            android:layout_alignBottom="@+id/add50"
+            android:layout_alignStart="@+id/ActualBalance"
+            android:text="+ ₹100" />
+
+        <Button
+            android:id="@+id/add200"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/add100"
+            android:layout_alignBottom="@+id/add100"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/ActualBalance"
+            android:background="@drawable/raised_button"
+            android:text="+ ₹200" />
+
+        <TextView
+            android:id="@+id/quickAddInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/add100"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:text="Quick Add"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    //SWIPE UP LAYOUT
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#ece9e9">
+
+
+        <ImageView
+            android:id="@+id/upArrowForHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            app:srcCompat="@drawable/ic_arrow_drop_up_black" />
+
+        <TextView
+            android:id="@+id/SwipeUpForHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upArrowForHistory"
+
+            android:fontFamily="@font/cabin_bold"
+            android:gravity="center"
+            android:text="Wallet History"
+            android:layout_marginTop="-10dp"
+            android:textColor="#505050"
+            android:textSize="18dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/SwipeUpForHistory">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/walletPageListView"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
